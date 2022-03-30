@@ -1,0 +1,120 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="home">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="botonCerrar nav-link active" aria-current="page" (click)="cerrarSesion()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg>
+              Cerrar Sesión
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+ 
+
+
+    <div class="row" *ngIf="id_role==1">
+      <div class="col-md-4"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      
+      </div>
+      <div class="col-md-6"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+       
+  
+        <span class="p-float-label" style="margin-bottom: 5%;">
+          <input id="float-input" type="text" [(ngModel)]="presidente" style="width: 70%;" pInputText> 
+          <label for="float-input">Presidente</label>
+      </span>
+  
+      <span class="p-float-label" style="margin-bottom: 5%;">
+        <input id="float-input" type="text" [(ngModel)]="vocal1" style="width: 70%;" pInputText> 
+        <label for="float-input">Vocal 1</label>
+    </span>
+  
+    <span class="p-float-label" style="margin-bottom: 0%;">
+      <input id="float-input" type="text" [(ngModel)]="vocal2" style="width: 70%;" pInputText> 
+      <label for="float-input">Vocal 2</label>
+  </span>
+  
+  
+
+  <div class="row" style="margin-bottom: -10%">
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+        DIA:
+    </div>
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      <p-dropdown [options]="dias" [(ngModel)]="diaSeleccionado" optionLabel="dia_letras" ></p-dropdown>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: -10%">
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+        MES:
+    </div>
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      <p-dropdown [options]="meses" [(ngModel)]="mesSeleccionado" optionLabel="mes_letras" ></p-dropdown>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: -10%">
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+        AÑO:
+    </div>
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      <p-dropdown [options]="anios" [(ngModel)]="anioSeleccionado" optionLabel="anio_letras" ></p-dropdown>
+    </div>
+  </div>
+      
+  <div class="row" style="margin-bottom: -10%">
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+        CARRERAS:
+    </div>
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      <p-dropdown [options]="carreras" [(ngModel)]="carreraSelecionada" optionLabel="nombre_carrera" ></p-dropdown>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom: -10%">
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+        ESTUDIANTES:
+    </div>
+    <div class="col-md-3"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      <p-dropdown [options]="estudiantes" [(ngModel)]="estudianteSeleccionado" optionLabel="nombre_completo"></p-dropdown>
+    </div>
+  </div>
+  
+       
+        
+      <div style="text-align: left; margin-top: 15%; margin-left: 20%;">
+        <button pButton type="button" label="GENERAR PDF" class="p-button-danger" (click)="generarPdf()">
+          <i class="pi pi-file-pdf" style="padding-right: 2%; font-size: 2rem;"></i>
+        </button>
+    </div>
+
+    
+    </div>
+    <div class="col-md-2"  style="background-color:rgb(255, 255, 255)">
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+<!-- 
+
+  Ing. Mejía Hinojosa Christian Hernán
+  Mgs. Chipuxi Fajardo Luis  
+  Mgs. Herrera Pérez Yogledis Josefina
+ -->

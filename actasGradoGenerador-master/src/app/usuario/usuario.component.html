@@ -1,0 +1,86 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="home">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="botonCerrar nav-link active" aria-current="page" (click)="cerrarSesion()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+                <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+              </svg>
+              Cerrar Sesión
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" style="text-align: center;">Bievenido {{nombre}} {{apellido}}</h1>
+      <p class="lead">Tipo Usuario: {{tipoUsuario}}</p>
+    </div>
+  </div>
+<!--USUAIRO ADMINISTRADOR -->
+  <div class="row" *ngIf="id_role==2">
+    <div class="col-md-4"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+      
+        <div class="card carta" style="width: 18rem;">
+            <img class="card-img-top" src="./../../assets/img/student.avif" alt="Card image cap" width="100%" height="150px">
+            <div class="card-body">
+              <h5 class="card-title">Estudiante</h5>
+              <p class="card-text">Ver y modificar los estudiantes</p>
+              <button (click)="irEstudiantes()" class="btn btn-info">Ver</button>
+            </div>
+          </div>       
+
+
+    </div>
+    <div class="col-md-4"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+     
+        <div class="card carta" style="width: 18rem;">
+            <img class="card-img-top" src="./../../assets/img/users.jpg" alt="Card image cap" width="100%" height="150px">
+            <div class="card-body">
+              <h5 class="card-title">Usuarios</h5>
+              <p class="card-text">Ver y modificar los usuarios</p>
+              <button (click)="irUsuarios()" class="btn btn-info">Ver</button>
+            </div>
+          </div>     
+
+
+    </div>
+    <div class="col-md-4"  style="background-color:rgb(255, 255, 255)">
+      
+    </div>
+  </div>
+
+<!-- USUARIO NORMAL -->
+
+
+<div class="row" *ngIf="id_role==1">
+  <div class="col-md-4"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+    
+      <div class="card carta" style="width: 18rem;">
+          <img class="card-img-top" src="./../../assets/img/graduados.jpg" alt="Card image cap" width="100%" height="150px">
+          <div class="card-body">
+            <h5 class="card-title">Actas de Grado</h5>
+            <p class="card-text">Genera las actas de grado</p>
+            <button (click)="irActas()" class="btn btn-info">Ver</button>
+          </div>
+        </div>       
+
+
+  </div>
+  <div class="col-md-4"  style="background-color:rgb(255, 255, 255); padding: 5%;">
+   
+  </div>
+  <div class="col-md-4"  style="background-color:rgb(255, 255, 255)">
+    
+  </div>
+</div>
+
+  

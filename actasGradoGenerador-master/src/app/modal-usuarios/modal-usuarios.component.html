@@ -1,0 +1,33 @@
+<p-toast></p-toast>
+<div style="background-color: rgb(255, 255, 255); width: 50%; height: 80%;">
+    <div class="p-3 mt-3" style="text-align: center;">
+       
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="name" pInputText> 
+            <label for="float-input">Nombre</label>
+        </span>
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="lastname" pInputText> 
+            <label for="float-input">Apellido</label>
+        </span>
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="username" pInputText> 
+            <label for="float-input">Usuario</label>
+        </span>
+
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="password" [(ngModel)]="password" pInputText> 
+            <label for="float-input">Contraseña</label>
+        </span>
+
+        <div style="margin-bottom: 30px; ">
+            <p-dropdown [options]="roles" [(ngModel)]="rolseleccionado" optionLabel="name" ></p-dropdown>
+        </div>
+        
+        <div  *ngIf="error===1"  class="alert alert-danger">{{mensaje}}</div>
+        <button *ngIf="tipoModal=='0'" pButton type="button" label="Registrar" class="p-button-success"  (click)="registrar()"></button>
+        <button *ngIf="tipoModal=='1'" pButton type="button" label="Actualizar" class="p-button-warning"  (click)="actualizar()"></button>
+
+
+    </div>
+</div>

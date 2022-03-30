@@ -1,0 +1,27 @@
+<p-toast></p-toast>
+<div style="background-color: rgb(255, 255, 255); width: 50%; height: 80%;">
+    <div class="p-3 mt-3" style="text-align: center;">
+       
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="cedula" pInputText> 
+            <label for="float-input">Cedula</label>
+        </span>
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="apellidos" pInputText> 
+            <label for="float-input">Apellidos</label>
+        </span>
+        <span class="p-float-label" style="margin-bottom: 30%;">
+            <input id="float-input" type="text" [(ngModel)]="nombres" pInputText> 
+            <label for="float-input">Nombres</label>
+        </span>
+        <div style="margin-bottom: 30px; ">
+            <p-dropdown [options]="carreras" [(ngModel)]="carreraSeleccionada" optionLabel="nombre_carrera"></p-dropdown>
+        </div>
+        
+        <div  *ngIf="error===1"  class="alert alert-danger">{{mensaje}}</div>
+        <button *ngIf="tipoModal=='0'" pButton type="button" label="Registrar" class="p-button-success"  (click)="registrar()"></button>
+        <button *ngIf="tipoModal=='1'" pButton type="button" label="Actualizar" class="p-button-warning"  (click)="actualizar()"></button>
+
+
+    </div>
+</div>
